@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package executor;
+
+import "execute.proto";
+
+option go_package = "pkg/executor";
+
+service ExecutorAPI {
+	rpc ExecuteTask(executor.ExecuteRequest) returns (executor.ExecuteResponse) {};
+}

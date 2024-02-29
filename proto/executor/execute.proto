@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package executor;
+
+import "bufbuild/protoc-gen-validate/validate.proto";
+
+option go_package = "pkg/executor";
+
+message ExecuteRequest {
+    string repo = 1 [(validate.rules).string.min_len = 1];
+    string cmd = 2 [(validate.rules).string.min_len = 1];
+}
+
+message ExecuteResponse {
+	ExecuteStatus status = 1;
+    int32 exit_code = 2;
+    string output = 3;
+    double time = 4;
+}
+
+enum ExecuteStatus {
+    SUCCESS = 0;
+    FAILED = 1;
+}
