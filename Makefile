@@ -10,8 +10,6 @@ executor:
 proto:
 	@protoc \
 		--proto_path=./proto/${PKG} \
-		--proto_path=./proto/third \
 		--go_out=. \
 		--go-grpc_out=. \
-		--validate_out="lang=go:pkg/${PKG}" --validate_opt="paths=source_relative" \
 		proto/${PKG}/*.proto

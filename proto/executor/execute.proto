@@ -2,13 +2,11 @@ syntax = "proto3";
 
 package executor;
 
-import "github.com/bufbuild/protoc-gen-validate/validate/validate.proto";
-
 option go_package = "pkg/executor";
 
 message ExecuteRequest {
-    string repo = 1 [(validate.rules).string.min_len = 1];
-    string cmd = 2 [(validate.rules).string.min_len = 1];
+    string repo = 1;
+    string cmd = 2;
 }
 
 message ExecuteResponse {
