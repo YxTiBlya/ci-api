@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package executor;
 
-import "bufbuild/protoc-gen-validate/validate.proto";
+import "github.com/bufbuild/protoc-gen-validate/validate/validate.proto";
 
 option go_package = "pkg/executor";
 
